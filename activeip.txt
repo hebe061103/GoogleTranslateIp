@@ -1,0 +1,7 @@
+142.250.1.90 translate.googleapis.com
+108.177.97.100 translate.googleapis.com
+108.177.111.90 translate.googleapis.com
+108.177.126.90 translate.googleapis.com
+142.250.1.90 translate.googleapis.com
+142.250.157.184 translate.googleapis.com
+142.251.112.90 translate.googleapis.com
