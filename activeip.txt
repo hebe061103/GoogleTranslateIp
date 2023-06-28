@@ -2,3 +2,9 @@
 108.177.126.90 translate.googleapis.com
 142.250.157.184 translate.googleapis.com
 142.250.157.186 translate.googleapis.com
+172.253.63.90 translate.googleapis.com
+172.253.117.90 translate.googleapis.com
+172.253.119.90 translate.googleapis.com
+172.253.125.90 translate.googleapis.com
+216.58.227.65 translate.googleapis.com
+216.58.227.66 translate.googleapis.com
