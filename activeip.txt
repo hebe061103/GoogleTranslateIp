@@ -1,11 +1,3 @@
-172.217.204.90 translate.googleapis.com
-142.250.28.90 translate.googleapis.com
 108.177.97.100 translate.googleapis.com
-142.250.99.90 translate.googleapis.com
-142.250.102.90 translate.googleapis.com
-142.250.113.90 translate.googleapis.com
-142.250.114.90 translate.googleapis.com
-142.250.123.90 translate.googleapis.com
-142.250.138.90 translate.googleapis.com
 142.250.157.184 translate.googleapis.com
 142.250.157.186 translate.googleapis.com
