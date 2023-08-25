@@ -52,6 +52,6 @@ then
     git add ./
     git commit -m "$date"
     git branch -M main
-    git remote set-url origin https://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@github.com/hebe061103/GoogleTranslateIp.git
+    git remote set-url origin https://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@github.com/hebe061103/GoogleTranslateIp.git
     git push -u origin main
 fi
