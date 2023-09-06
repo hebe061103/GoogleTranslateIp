@@ -1,6 +1,6 @@
-108.177.97.100 translate.googleapis.com
-108.177.97.100 translate.google.com
-142.250.157.186 translate.googleapis.com
-142.250.157.186 translate.google.com
 142.250.157.184 translate.googleapis.com
 142.250.157.184 translate.google.com
+142.250.157.186 translate.googleapis.com
+142.250.157.186 translate.google.com
+108.177.97.100 translate.googleapis.com
+108.177.97.100 translate.google.com
