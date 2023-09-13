@@ -48,10 +48,32 @@ date=$(date "+%Y-%m-%d %H:%M:%S")
 echo "$date 日更新!" >> README.md
 if [ -s activeip.txt ]
 then
+    while true;
+    do
     git init
     git add ./
     git commit -m "$date"
     git branch -M main
     git remote set-url origin https://$GITHUBTOKEN@github.com/hebe061103/GoogleTranslateIp.git
-    git push -u origin main
+    result=`git push -u origin main`
+    if echo "$result" | grep -e "set up to track remote branch";then
+       date=$(date "+%Y-%m-%d %H:%M:%S")
+       echo --$date-- "------------------------同步到github成功-------------------------" |tee -a /tmp/pingGoogleTranslateIp.log
+       break
+    else
+       let try_num++
+       date=$(date "+%Y-%m-%d %H:%M:%S")
+       echo --$date-- "------------------------同步失败,执行第$try_num次尝试-------------------------" |tee -a /tmp/pingGoogleTranslateIp.log
+       sleep 30
+       if [ $try_num -eq 10 ];then
+           echo --$date-- "------------------------经过$try_num次尝试依然失败,故障退出-------------------------" |tee -a /tmp/pingGoogleTranslateIp.log
+           break
+       fi
+    fi
+    done
+fi
+#清除日志内容
+a=$(grep -c "" /tmp/pingGoogleTranslateIp.log)
+if [ $a -gt 200 ]; then
+    rm /tmp/pingGoogleTranslateIp.log
 fi
