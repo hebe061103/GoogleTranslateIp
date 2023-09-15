@@ -1,4 +1,5 @@
 #!/bin/bash
+. /etc/profile
 parm_path=$(cd `dirname $0`; pwd)
 cd $parm_path
 rm ips.txt
@@ -59,6 +60,16 @@ then
        date=$(date "+%Y-%m-%d %H:%M:%S")
        echo --$date-- "------------------------同步到github成功-------------------------" |tee -a /tmp/pingGoogleTranslateIp.log
        break
+    else
+       let num++
+       date=$(date "+%Y-%m-%d %H:%M:%S")
+       echo --$date-- "------------------------同步失败,开始进行第$num次重试-------------------------" |tee -a /tmp/pingGoogleTranslateIp.log
+       sleep 10
+       if [ $num -eq 10 ];then
+          date=$(date "+%Y-%m-%d %H:%M:%S")
+          echo --$date-- "------------------------重试$num次失败,故障退出-------------------------" |tee -a /tmp/pingGoogleTranslateIp.log
+          break
+       fi
     fi
     done
 fi
