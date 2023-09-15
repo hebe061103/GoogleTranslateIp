@@ -43,9 +43,8 @@ wait
 stop_time=`date +%s` # 定义脚本运行的结束时间
 echo "多线程ping用时:`expr $stop_time - $start_time`s"
 
-echo "# GoogleTranslateIp" > README.md
 date=$(date "+%Y-%m-%d %H:%M:%S")
-echo "$date 日更新!" >> README.md
+echo "# GoogleTranslateIp:""$date 日更新!" > README.md
 if [ -s activeip.txt ]
 then
     while true;
@@ -60,15 +59,6 @@ then
        date=$(date "+%Y-%m-%d %H:%M:%S")
        echo --$date-- "------------------------同步到github成功-------------------------" |tee -a /tmp/pingGoogleTranslateIp.log
        break
-    else
-       let try_num++
-       date=$(date "+%Y-%m-%d %H:%M:%S")
-       echo --$date-- "------------------------同步失败,执行第$try_num次尝试-------------------------" |tee -a /tmp/pingGoogleTranslateIp.log
-       sleep 30
-       if [ $try_num -eq 10 ];then
-           echo --$date-- "------------------------经过$try_num次尝试依然失败,故障退出-------------------------" |tee -a /tmp/pingGoogleTranslateIp.log
-           break
-       fi
     fi
     done
 fi
